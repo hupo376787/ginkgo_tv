@@ -1,0 +1,26 @@
+name: ginkgo_tv
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http:
+  media_kit:                    # Primary package.
+  media_kit_video:              # For video rendering.
+  media_kit_libs_video:         # Native video dependencies.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+# assets:
+#   - assets/000.mp4
