@@ -1,16 +1,39 @@
+import 'dart:io';
+
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ginkgo_tv/helper/toast_helper.dart';
+import 'package:ginkgo_tv/splash_screen.dart';
 
 import 'package:http/http.dart' as http;
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
+import 'package:sentry_flutter/sentry_flutter.dart';
+import 'package:window_manager/window_manager.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Necessary initialization for package:media_kit.
   MediaKit.ensureInitialized();
 
-  runApp(const MainApp());
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    // 必须加上这一行。
+    await windowManager.ensureInitialized();
+  }
+
+  await SentryFlutter.init(
+    (options) {
+      options.dsn =
+          'https://bb158a849e212c311c4c7d077e9db600@o4506782294671360.ingest.sentry.io/4506782299193344';
+    },
+    // Init your App.
+    appRunner: () => runApp(MaterialApp(
+      home: const SplashScreen(),
+      builder: BotToastInit(),
+      navigatorObservers: [BotToastNavigatorObserver()],
+    )),
+  );
 }
 
 class MainApp extends StatefulWidget {
@@ -114,28 +137,47 @@ class _MainAppState extends State<MainApp> {
   void initState() {
     super.initState();
     var res = getData();
-    res.then((value) => {
-          if (value) {} else {player.open(sources)}
-        });
+    res
+        .then((value) => {
+              if (value)
+                () {
+                  showMyToast('联网成功');
+                }
+              else
+                () {
+                  showMyToast('联网失败，使用本地缓存。');
+                  player.open(sources);
+                }
+            })
+        .onError((error, stackTrace) => {
+              () {
+                showMyToast('联网失败，使用本地缓存。');
+                player.open(sources);
+              }
+            });
     player.setPlaylistMode(PlaylistMode.loop);
   }
 
   Future<bool> getData() async {
-    var res = await http.get(Uri.parse(
-        'https://raw.githubusercontent.com/hupo376787/Livelist/main/CCTV.m3u'));
-    if (res.statusCode == 200) {
-      sources.medias.clear();
-      res.body.split('\n').forEach((element) {
-        if (element.startsWith('http:')) {
-          sources.medias.add(Media(element));
-        }
-      });
-      player.open(sources);
+    try {
+      var res = await http.get(Uri.parse(
+          'https://raw.githubusercontent.com/hupo376787/Livelist/main/CCTV.m3u'));
+      if (res.statusCode == 200) {
+        sources.medias.clear();
+        res.body.split('\n').forEach((element) {
+          if (element.startsWith('http:')) {
+            sources.medias.add(Media(element));
+          }
+        });
+        player.open(sources);
 
-      return Future<bool>.value(true);
+        return Future<bool>.value(true);
+      }
+
+      return Future<bool>.value(false);
+    } on Exception {
+      return Future<bool>.value(false);
     }
-
-    return Future<bool>.value(false);
   }
 
   @override
@@ -147,24 +189,25 @@ class _MainAppState extends State<MainApp> {
   @override
   Widget build(BuildContext context) {
     return RawKeyboardListener(
-        focusNode: FocusNode(),
-        autofocus: true,
-        onKey: (value) {
-          if (value is RawKeyDownEvent) {
-            switch (value.logicalKey.keyLabel) {
-              case "Arrow Up":
-                player.previous();
-                break;
-              case "Arrow Down":
-                player.next();
-                break;
-              default:
-            }
+      focusNode: FocusNode(),
+      autofocus: true,
+      onKey: (value) {
+        if (value is RawKeyDownEvent) {
+          switch (value.logicalKey.keyLabel) {
+            case "Arrow Up":
+              player.previous();
+              break;
+            case "Arrow Down":
+              player.next();
+              break;
+            default:
           }
-        },
-        child: MaterialApp(
-          home: Scaffold(
-            body: Center(
+        }
+      },
+      child: Scaffold(
+        body: Stack(
+          children: [
+            Center(
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width * 9.0 / 16.0,
@@ -173,7 +216,23 @@ class _MainAppState extends State<MainApp> {
                 ),
               ),
             ),
-          ),
-        ));
+            IconButton(
+              onPressed: () async {
+                if (Platform.isWindows ||
+                    Platform.isLinux ||
+                    Platform.isMacOS) {
+                  var top = await windowManager.isAlwaysOnTop();
+                  windowManager.setAlwaysOnTop(!top);
+                  windowManager.setTitleBarStyle(
+                      top ? TitleBarStyle.normal : TitleBarStyle.hidden);
+                }
+              },
+              icon: const Icon(Icons.menu),
+              color: Colors.white,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

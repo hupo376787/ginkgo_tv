@@ -13,6 +13,13 @@ dependencies:
   media_kit:                    # Primary package.
   media_kit_video:              # For video rendering.
   media_kit_libs_video:         # Native video dependencies.
+  window_manager:
+  sentry_flutter:
+  lottie:
+  bot_toast:
+  double_back_to_close:
+  flutter_launcher_icons:
+  another_flutter_splash_screen:
 
 dev_dependencies:
   flutter_test:
@@ -22,5 +29,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-# assets:
-#   - assets/000.mp4
+  assets:
+    - assets/lottie/Netflix.json
+    - assets/lottie/WatchTV.json
+    - assets/sound/Netflix.mp3
