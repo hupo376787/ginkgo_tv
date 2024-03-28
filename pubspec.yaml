@@ -20,6 +20,7 @@ dependencies:
   double_back_to_close:
   flutter_launcher_icons:
   another_flutter_splash_screen:
+  flutter_context_menu:
 
 dev_dependencies:
   flutter_test:
@@ -33,3 +34,6 @@ flutter:
     - assets/lottie/Netflix.json
     - assets/lottie/WatchTV.json
     - assets/sound/Netflix.mp3
+    - assets/icon/icon.png
+    - assets/icon/image.png
+    - assets/file/channels.json
