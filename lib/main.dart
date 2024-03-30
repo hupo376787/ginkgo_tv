@@ -119,7 +119,7 @@ class _MainAppState extends State<MainApp> {
                     ),
                   )),
             ),
-            popup,
+            // popup,
             IconButton(
               onPressed: () async {
                 if (Platform.isWindows ||
