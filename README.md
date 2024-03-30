@@ -2,4 +2,4 @@
 
 在线看电视，基于Flutter，全平台运行。
 
-![screenshot](screenshot.jpg)
+![screenshot](0.jpg)
