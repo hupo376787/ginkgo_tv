@@ -21,6 +21,8 @@ dependencies:
   flutter_launcher_icons:
   another_flutter_splash_screen:
   flutter_context_menu:
+  file_picker:
+  fialogs:
 
 dev_dependencies:
   flutter_test:

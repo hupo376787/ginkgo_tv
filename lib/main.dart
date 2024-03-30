@@ -3,15 +3,15 @@ import 'dart:io';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:ginkgo_tv/helper/toast_helper.dart';
+import 'package:flutter_context_menu/flutter_context_menu.dart';
 import 'package:ginkgo_tv/model/channel.dart';
+import 'package:ginkgo_tv/popup.dart';
 import 'package:ginkgo_tv/splash_screen.dart';
-
-import 'package:http/http.dart' as http;
 import 'package:media_kit/media_kit.dart';
 import 'package:media_kit_video/media_kit_video.dart';
 import 'package:sentry_flutter/sentry_flutter.dart';
 import 'package:window_manager/window_manager.dart';
+import 'utils/menu_items.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -44,8 +44,12 @@ class MainApp extends StatefulWidget {
   State<MainApp> createState() => _MainAppState();
 }
 
+final player = Player();
+late List<Channel> channels;
+var onLineSources = const Playlist(<Media>[]);
+late PupupWidget popup = PupupWidget();
+
 class _MainAppState extends State<MainApp> {
-  late final player = Player();
   late final controller = VideoController(player);
   String? channelContent;
 
@@ -60,14 +64,14 @@ class _MainAppState extends State<MainApp> {
               channelContent = value;
 
               List<Media> medias = <Media>[];
-              final sources = Playlist(medias);
-              final channels = channelFromJson(channelContent!);
+              onLineSources = Playlist(medias);
+              channels = channelFromJson(channelContent!);
               for (int i = 0; i <= channels.length - 1; i++) {
                 if (channels[i].videoUrl.isNotEmpty) {
                   medias.add(Media(channels[i].videoUrl[0]));
                 }
               }
-              player.open(sources);
+              player.open(onLineSources);
               player.setPlaylistMode(PlaylistMode.loop);
             }));
   }
@@ -92,6 +96,8 @@ class _MainAppState extends State<MainApp> {
             case "Arrow Down":
               player.next();
               break;
+            case "Enter":
+              break;
             default:
           }
         }
@@ -100,14 +106,20 @@ class _MainAppState extends State<MainApp> {
         body: Stack(
           children: [
             Center(
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width * 9.0 / 16.0,
-                child: Video(
-                  controller: controller,
-                ),
-              ),
+              child: ContextMenuRegion(
+                  contextMenu: contextMenu,
+                  onItemSelected: (value) {
+                    debugPrint(value);
+                  },
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: MediaQuery.of(context).size.width * 9.0 / 16.0,
+                    child: Video(
+                      controller: controller,
+                    ),
+                  )),
             ),
+            popup,
             IconButton(
               onPressed: () async {
                 if (Platform.isWindows ||
