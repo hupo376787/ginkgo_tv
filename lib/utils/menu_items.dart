@@ -82,6 +82,58 @@ class MenuItems {
             }
           },
         ));
+    entriesDesktop.insert(
+        0,
+        MenuItem.submenu(label: '播放速度', icon: Icons.speed, items: [
+          MenuItem(
+            label: '1x',
+            onSelected: () {
+              player.setRate(1.0);
+            },
+          ),
+          MenuItem(
+            label: '1.25x',
+            onSelected: () {
+              player.setRate(1.25);
+            },
+          ),
+          MenuItem(
+            label: '1.5x',
+            onSelected: () {
+              player.setRate(1.5);
+            },
+          ),
+          MenuItem(
+            label: '1.75x',
+            onSelected: () {
+              player.setRate(1.75);
+            },
+          ),
+          MenuItem(
+            label: '2x',
+            onSelected: () {
+              player.setRate(2);
+            },
+          ),
+          MenuItem(
+            label: '3x',
+            onSelected: () {
+              player.setRate(3);
+            },
+          ),
+          MenuItem(
+            label: '4x',
+            onSelected: () {
+              player.setRate(4);
+            },
+          ),
+          MenuItem(
+            label: '5x',
+            onSelected: () {
+              player.setRate(5);
+            },
+          ),
+        ]));
   }
 
   //initialize a context menu
