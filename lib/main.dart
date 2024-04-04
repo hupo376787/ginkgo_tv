@@ -48,6 +48,7 @@ final player = Player();
 late List<Channel> channels;
 var onLineSources = const Playlist(<Media>[]);
 late PupupWidget popup = PupupWidget();
+late MenuItems menuItems = MenuItems();
 
 class _MainAppState extends State<MainApp> {
   late final controller = VideoController(player);
@@ -107,7 +108,7 @@ class _MainAppState extends State<MainApp> {
           children: [
             Center(
               child: ContextMenuRegion(
-                  contextMenu: contextMenu,
+                  contextMenu: MenuItems().dynamicMenu(),
                   onItemSelected: (value) {
                     debugPrint(value);
                   },
@@ -119,18 +120,9 @@ class _MainAppState extends State<MainApp> {
                     ),
                   )),
             ),
-            // popup,
+            //popup,
             IconButton(
-              onPressed: () async {
-                if (Platform.isWindows ||
-                    Platform.isLinux ||
-                    Platform.isMacOS) {
-                  var top = await windowManager.isAlwaysOnTop();
-                  windowManager.setAlwaysOnTop(!top);
-                  windowManager.setTitleBarStyle(
-                      top ? TitleBarStyle.normal : TitleBarStyle.hidden);
-                }
-              },
+              onPressed: () async {},
               icon: const Icon(Icons.menu),
               color: Colors.white,
             ),

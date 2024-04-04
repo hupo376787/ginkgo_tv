@@ -10,9 +10,10 @@ class PupupWidget extends StatefulWidget {
 }
 
 class _PupupWidgetState extends State<PupupWidget> {
-  late List<Channel> chns;
+  late List<Channel> chns = <Channel>[];
 
   Future<void> getData() async {
+    if (chns.isNotEmpty) return;
     rootBundle
         .loadString("assets/file/channels.json")
         .then((value) => setState(() {
@@ -27,10 +28,24 @@ class _PupupWidgetState extends State<PupupWidget> {
       future: getData(),
       builder: (context, snapshot) {
         return ListView.builder(
+            shrinkWrap: true,
             itemCount: chns.length,
             itemBuilder: (context, index) {
-              return Container(
-                child: Text('ddd'),
+              return UnconstrainedBox(
+                child: Container(
+                  color: Colors.white.withOpacity(0.5),
+                  width: 300,
+                  height: 50,
+                  child: Text(
+                    'CCTV1 综合',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 32,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               );
             });
       },
