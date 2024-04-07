@@ -19,6 +19,7 @@ class MenuItems {
         icon: Icons.live_tv,
         onSelected: () {
           player.open(onLineSources);
+          player.setRate(1.0);
         },
       ),
       MenuItem(
@@ -134,6 +135,8 @@ class MenuItems {
             },
           ),
         ]));
+
+    entriesDesktop.insert(2, const MenuDivider());
   }
 
   //initialize a context menu

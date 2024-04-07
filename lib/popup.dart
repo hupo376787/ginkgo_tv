@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:ginkgo_tv/helper/toast_helper.dart';
+import 'package:ginkgo_tv/main.dart';
 import 'package:ginkgo_tv/model/channel.dart';
 
 class PupupWidget extends StatefulWidget {
@@ -19,6 +23,9 @@ class _PupupWidgetState extends State<PupupWidget> {
         .then((value) => setState(() {
               debugPrint(value);
               chns = channelFromJson(value);
+
+              chns =
+                  chns.where((element) => element.videoUrl.isNotEmpty).toList();
             }));
   }
 
@@ -27,27 +34,50 @@ class _PupupWidgetState extends State<PupupWidget> {
     return FutureBuilder(
       future: getData(),
       builder: (context, snapshot) {
-        return ListView.builder(
-            shrinkWrap: true,
-            itemCount: chns.length,
-            itemBuilder: (context, index) {
-              return UnconstrainedBox(
-                child: Container(
-                  color: Colors.white.withOpacity(0.5),
-                  width: 300,
-                  height: 50,
-                  child: Text(
-                    'CCTV1 综合',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              );
-            });
+        return Container(
+          width: 300,
+          alignment: Alignment.topLeft,
+          child: ListView.builder(
+              itemCount: chns.length,
+              itemBuilder: (context, index) {
+                return UnconstrainedBox(
+                  alignment: Alignment.topLeft,
+                  child: BackdropFilter(
+                      filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
+                      child: Container(
+                        color: Colors.white.withOpacity(0.2),
+                        width: 300,
+                        height: 50,
+                        child: ElevatedButton(
+                            onPressed: () {
+                              debugPrint(chns[index].title);
+                              showMyToast(chns[index].title);
+                              player.setRate(1.0);
+                              player.jump(index);
+                            },
+                            style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.transparent),
+                                shape: MaterialStateProperty.all<
+                                    RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(0.0),
+                                  ),
+                                )),
+                            child: Text(
+                              chns[index].title,
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(
+                                fontSize: 32,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            )),
+                      )),
+                );
+              }),
+        );
       },
     );
   }

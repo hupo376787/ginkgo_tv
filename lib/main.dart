@@ -4,6 +4,7 @@ import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_context_menu/flutter_context_menu.dart';
+import 'package:get/get.dart';
 import 'package:ginkgo_tv/model/channel.dart';
 import 'package:ginkgo_tv/popup.dart';
 import 'package:ginkgo_tv/splash_screen.dart';
@@ -29,7 +30,7 @@ void main() async {
           'https://bb158a849e212c311c4c7d077e9db600@o4506782294671360.ingest.sentry.io/4506782299193344';
     },
     // Init your App.
-    appRunner: () => runApp(MaterialApp(
+    appRunner: () => runApp(GetMaterialApp(
       home: const SplashScreen(),
       builder: BotToastInit(),
       navigatorObservers: [BotToastNavigatorObserver()],
@@ -47,8 +48,8 @@ class MainApp extends StatefulWidget {
 final player = Player();
 late List<Channel> channels;
 var onLineSources = const Playlist(<Media>[]);
-late PupupWidget popup = PupupWidget();
-late MenuItems menuItems = MenuItems();
+PupupWidget popup = const PupupWidget();
+bool menuVisible = false;
 
 class _MainAppState extends State<MainApp> {
   late final controller = VideoController(player);
@@ -60,7 +61,7 @@ class _MainAppState extends State<MainApp> {
 
     rootBundle
         .loadString("assets/file/channels.json")
-        .then((value) => setState(() {
+        .then((value) => setState(() async {
               debugPrint(value);
               channelContent = value;
 
@@ -74,6 +75,11 @@ class _MainAppState extends State<MainApp> {
               }
               player.open(onLineSources);
               player.setPlaylistMode(PlaylistMode.loop);
+
+              if (player.platform is NativePlayer) {
+              } else {
+                await (player.platform as dynamic).setProperty('cache', 'no');
+              }
             }));
   }
 
@@ -112,17 +118,33 @@ class _MainAppState extends State<MainApp> {
                   onItemSelected: (value) {
                     debugPrint(value);
                   },
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.width * 9.0 / 16.0,
-                    child: Video(
-                      controller: controller,
+                  child: InkWell(
+                    onTap: () {
+                      debugPrint('onTap InkWell');
+                      setState(() {
+                        menuVisible = !menuVisible;
+                      });
+                    },
+                    child: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.width * 9.0 / 16.0,
+                      child: Video(
+                        controller: controller,
+                      ),
                     ),
                   )),
             ),
-            //popup,
+            Visibility(
+              visible: menuVisible,
+              maintainState: true,
+              child: popup,
+            ),
             IconButton(
-              onPressed: () async {},
+              onPressed: () async {
+                setState(() {
+                  menuVisible = !menuVisible;
+                });
+              },
               icon: const Icon(Icons.menu),
               color: Colors.white,
             ),
