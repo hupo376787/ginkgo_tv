@@ -11,7 +11,7 @@
     "mustToken": false,
     "title": "CCTV1 综合",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226231/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226559/index.m3u8",
       "http://[2409:8087:7000:20::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226231/index.m3u8"
     ]
   },
@@ -27,7 +27,7 @@
     "mustToken": false,
     "title": "CCTV2 财经",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226195/index.m3u8",
+      "http://[2409:8087:74f0:22::4]:6410/270000001128/9900000502/index.m3u8?",
       "http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226195/index.m3u8"
     ]
   },
@@ -43,7 +43,7 @@
     "mustToken": true,
     "title": "CCTV3 综艺",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226397/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226021/index.m3u8",
       "http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226397/index.m3u8"
     ]
   },
@@ -59,7 +59,7 @@
     "mustToken": false,
     "title": "CCTV4 中文国际",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226191/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226428/index.m3u8",
       "http://39.134.24.161/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226191/index.m3u8",
       "http://[2409:8087:7000:20::204]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226191/index.m3u8"
     ]
@@ -76,7 +76,7 @@
     "mustToken": false,
     "title": "CCTV5 体育",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226395/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226019/index.m3u8",
       "http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226395/index.m3u8"
     ]
   },
@@ -92,7 +92,7 @@
     "mustToken": false,
     "title": "CCTV5+ 体育赛事",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226221/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225603/index.m3u8",
       "http://[2409:8087:7000:20::203]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225761/index.m3u8"
     ]
   },
@@ -108,7 +108,7 @@
     "mustToken": true,
     "title": "CCTV6 电影",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226393/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226010/index.m3u8",
       "http://[2409:8087:7001:20:3::7]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226393/index.m3u8"
     ]
   },
@@ -124,7 +124,7 @@
     "mustToken": false,
     "title": "CCTV7 国防军事",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226192/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225733/index.m3u8",
       "http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226192/index.m3u8"
     ]
   },
@@ -140,7 +140,7 @@
     "mustToken": true,
     "title": "CCTV8 电视剧",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226391/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226008/index.m3u8",
       "http://[2409:8087:7001:20:3::8]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226391/index.m3u8"
     ]
   },
@@ -156,7 +156,7 @@
     "mustToken": false,
     "title": "CCTV9 纪录",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226197/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225734/index.m3u8",
       "http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226197/index.m3u8"
     ]
   },
@@ -172,7 +172,7 @@
     "mustToken": false,
     "title": "CCTV10 科教",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226189/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226473/index.m3u8",
       "http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226189/index.m3u8"
     ]
   },
@@ -188,7 +188,7 @@
     "mustToken": false,
     "title": "CCTV11 戏曲",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226240/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226565/index.m3u8",
       "http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226240/index.m3u8"
     ]
   },
@@ -204,7 +204,7 @@
     "mustToken": false,
     "title": "CCTV12 社会与法",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226190/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225731/index.m3u8",
       "http://[2409:8087:7001:20:3::6]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226190/index.m3u8"
     ]
   },
@@ -220,7 +220,7 @@
     "mustToken": false,
     "title": "CCTV13 新闻",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226233/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226537/index.m3u8",
       "https://live-play.cctvnews.cctv.com/cctv/merge_cctv13.m3u8",
       "http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226233/index.m3u8"
     ]
@@ -237,7 +237,7 @@
     "mustToken": false,
     "title": "CCTV14 少儿",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226193/index.m3u8",
+      "http://[2409:8087:1a01:df::4077]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225732/index.m3u8",
       "http://[2409:8087:7001:20:3::2]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226193/index.m3u8"
     ]
   },
@@ -253,7 +253,7 @@
     "mustToken": false,
     "title": "CCTV15 音乐",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221225785/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226476/index.m3u8",
       "http://[2409:8087:7001:20:3::4]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221225785/index.m3u8"
     ]
   },
@@ -269,7 +269,7 @@
     "mustToken": false,
     "title": "CCTV16 奥林匹克",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226921/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221226100/index.m3u8",
       "http://39.134.24.162/dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226921/index.m3u8",
       "http://[2409:8087:7001:20:3::9]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226921/index.m3u8"
     ]
@@ -286,245 +286,24 @@
     "mustToken": false,
     "title": "CCTV17 农业农村",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226198/index.m3u8",
+      "http://[2409:8087:1a01:df::7005]:80/ottrrs.hl.chinamobile.com/TVOD/88888888/224/3221225765/index.m3u8",
       "http://[2409:8087:7001:20:3::5]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226198/index.m3u8"
     ]
   },
   {
-    "id": 18,
+    "id": 35,
     "videoIndex": 0,
     "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/3e9d06fd7244d950df5838750f1c6ac3456e172b51caca2c16d2282125b111e8.png?imageMogr2/format/webp",
-    "pid": "600002264",
-    "sid": "2000266303",
-    "programId": "600002264",
-    "needToken": true,
-    "mustToken": false,
-    "title": "CCTV4K 超高清",
-    "videoUrl": [
-      "http://[2409:8087:2001:20:2800:0:df6e:eb13]:80/ott.mobaibox.com/PLTV/3/224/3221228228/index.m3u8"
-    ]
-  },
-  {
-    "id": 19,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "",
-    "pid": "600156816",
-    "sid": "2020603421",
-    "programId": "",
-    "needToken": false,
-    "mustToken": false,
-    "title": "CCTV8K 超高清",
-    "videoUrl": [
-      "http://[2409:8087:2001:20:2800:0:df6e:eb03]:80/ott.mobaibox.com/PLTV/4/224/3221228165/index.m3u8"
-    ]
-  },
-  {
-    "id": 20,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/4d549e53e6d0f632d5a633d1945280797b153e588f919221a07faa869812cc89.png?imageMogr2/format/webp",
-    "pid": "600099658",
-    "sid": "2012513603",
-    "programId": "600099658",
-    "needToken": true,
-    "mustToken": true,
-    "title": "风云剧场",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226950/index.m3u8"
-    ]
-  },
-  {
-    "id": 21,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/a556bd7d93ce65e18f243a8892b5604f4faa994a4897315914216a710a706208.png?imageMogr2/format/webp",
-    "pid": "600099655",
-    "sid": "2012514403",
-    "programId": "600099655",
-    "needToken": true,
-    "mustToken": true,
-    "title": "第一剧场",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226959/index.m3u8"
-    ]
-  },
-  {
-    "id": 22,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/5661bd04fecdb6e899f801147a22ab5d3a475bf2b62e30aec2c0023190ebc9b1.png?imageMogr2/format/webp",
-    "pid": "600099620",
-    "sid": "2012511203",
-    "programId": "600099620",
-    "needToken": true,
-    "mustToken": true,
-    "title": "怀旧剧场",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226972/index.m3u8"
-    ]
-  },
-  {
-    "id": 23,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/bb3c6c9e145d698137f5bb64a582021a01b51344b929003630eb769ea65832a9.png?imageMogr2/format/webp",
-    "pid": "600099637",
-    "sid": "2012513303",
-    "programId": "600099637",
-    "needToken": true,
-    "mustToken": true,
-    "title": "世界地理",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226947/index.m3u8"
-    ]
-  },
-  {
-    "id": 24,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/bbf1d024c5228b8dd128b0e3cb1717d173fab4ee84c3a4c8a57b1a215362ca3b.png?imageMogr2/format/webp",
-    "pid": "600099660",
-    "sid": "2012514103",
-    "programId": "600099660",
-    "needToken": true,
-    "mustToken": true,
-    "title": "风云音乐",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226953/index.m3u8"
-    ]
-  },
-  {
-    "id": 25,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/4c6b6a6d3839889f34d33db3c2f80233b26b74d3489b393487635f8704e70796.png?imageMogr2/format/webp",
-    "pid": "600099649",
-    "sid": "2012513403",
-    "programId": "600099649",
-    "needToken": true,
-    "mustToken": true,
-    "title": "兵器科技",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226975/index.m3u8"
-    ]
-  },
-  {
-    "id": 26,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/cd1e2bb52b06a991de168733e5ff0f1d85adc8042d40c8f393f723543e5dd08a.png?imageMogr2/format/webp",
-    "pid": "600099636",
-    "sid": "2012514203",
-    "programId": "600099636",
-    "needToken": true,
-    "mustToken": true,
-    "title": "风云足球",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226984/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226984/index.m3u8"
-    ]
-  },
-  {
-    "id": 27,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/cdd1b31ede7a5ad049ed53d9a072422f829e72dd062ed2c19e077fdd01699071.png?imageMogr2/format/webp",
-    "pid": "600099659",
-    "sid": "2012512503",
-    "programId": "600099659",
-    "needToken": true,
-    "mustToken": true,
-    "title": "高尔夫网球",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226978/index.m3u8"
-    ]
-  },
-  {
-    "id": 28,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/fa28955ce8b2539d728bf4c6a13a46ff57ad76eae46627f7bcfb1ed8a613d3fc.png?imageMogr2/format/webp",
-    "pid": "600099650",
-    "sid": "2012513903",
-    "programId": "600099650",
-    "needToken": true,
-    "mustToken": true,
-    "title": "女性时尚",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226969/index.m3u8"
-    ]
-  },
-  {
-    "id": 29,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/14ac5ce40482cacd3d4b37435222bfe86af2b452a2f04ecbfc1d13d76edd7c57.png?imageMogr2/format/webp",
-    "pid": "600099653",
-    "sid": "2012513803",
-    "programId": "600099653",
-    "needToken": true,
-    "mustToken": true,
-    "title": "央视文化精品",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226981/index.m3u8"
-    ]
-  },
-  {
-    "id": 30,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/10e14a92478011aa6c3c8562e62127f3b1908e29fcd78e4b2b24b9e6d3ec2fbc.png?imageMogr2/format/webp",
-    "pid": "600099652",
-    "sid": "2012513703",
-    "programId": "600099652",
-    "needToken": true,
-    "mustToken": true,
-    "title": "央视台球",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226956/index.m3u8"
-    ]
-  },
-  {
-    "id": 31,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/244d72c0eb1615ed7d51c2f5db5a67f306aa3f58c05bc2d34de3aa7e956dc8c9.png?imageMogr2/format/webp",
-    "pid": "600099656",
-    "sid": "2012514003",
-    "programId": "600099656",
-    "needToken": true,
-    "mustToken": true,
-    "title": "电视指南",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888893/224/3221226987/index.m3u8"
-    ]
-  },
-  {
-    "id": 32,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://resources.yangshipin.cn/assets/oms/image/202306/54a6863656fdfd8f803be193ddf22441c5000a108833889816fd2d8911715ce8.png?imageMogr2/format/webp",
+    "logo": "https://live.fanmingming.com/tv/CHC高清电影.png",
     "pid": "600099651",
     "sid": "2012513503",
     "programId": "600099651",
     "needToken": true,
     "mustToken": true,
-    "title": "卫生健康",
+    "title": "CHC高清电影",
     "videoUrl": [
-      ""
+      "http://cg14.hunancatv.cn:9090/live/CHCGQ_8000.m3u8?deviceid=866265039837531&sid=Yp6brv0MWYukAl4oJr9yrw%3D%3D&nonce=Ri1TgJg9dlAK&acl=0111&hlsSessionID=11082234455604315487&srchost=172.16.22.158:8060&gid=QTVto%2BZu6pkkcNYy4OxcMg%3D%3D",
+      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8"
     ]
   },
   {
@@ -539,7 +318,7 @@
     "mustToken": true,
     "title": "CHC动作电影",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8",
+      "http://cg0.hunancatv.cn:9090/live/CHCDZDY_8000.m3u8?deviceid=866265039837531&sid=Yp6brv0MWYukAl4oJr9yrw%3D%3D&nonce=Ri1TgJg9dlAK&acl=0111&hlsSessionID=11082234455604316076&srchost=172.16.22.158:8060&gid=ZF3q5L%2FmYWch1qWqTIPAjw%3D%3D",
       "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8"
     ]
   },
@@ -555,24 +334,8 @@
     "mustToken": true,
     "title": "CHC家庭影院",
     "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8",
+      "http://cg11.hunancatv.cn:9090/live/CHCJTYY_8000.m3u8?deviceid=866265039837531&sid=Yp6brv0MWYukAl4oJr9yrw%3D%3D&nonce=Ri1TgJg9dlAK&acl=0111&hlsSessionID=11082234455604316833&srchost=172.16.22.158:8060&gid=c%2BNqgq8pR1ZQ7ZzcmkS8%2BQ%3D%3D",
       "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8"
-    ]
-  },
-  {
-    "id": 35,
-    "videoIndex": 0,
-    "channel": "央视",
-    "logo": "https://live.fanmingming.com/tv/CHC高清电影.png",
-    "pid": "600099651",
-    "sid": "2012513503",
-    "programId": "600099651",
-    "needToken": true,
-    "mustToken": true,
-    "title": "CHC高清电影",
-    "videoUrl": [
-      "http://dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8",
-      "http://[2409:8087:7001:20:2::3]:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8"
     ]
   },
   {

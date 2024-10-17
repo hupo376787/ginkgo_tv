@@ -4,11 +4,13 @@ import 'package:fialogs/fialogs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_context_menu/flutter_context_menu.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:get/get.dart';
 import 'package:ginkgo_tv/main.dart';
 import 'package:media_kit/media_kit.dart';
 import 'package:window_manager/window_manager.dart';
 
 class MenuItems {
+  final MainController mainController = Get.put(MainController());
   late List<ContextMenuEntry> entriesTV;
   late List<ContextMenuEntry> entriesDesktop;
 
@@ -20,6 +22,8 @@ class MenuItems {
         onSelected: () {
           player.open(onLineSources);
           player.setRate(1.0);
+
+          mainController.isPlayingOnlineVideo.value = true;
         },
       ),
       MenuItem(
@@ -34,6 +38,8 @@ class MenuItems {
             final sources = Playlist(medias);
             medias.add(Media(result.files.single.path!));
             player.open(sources);
+
+            mainController.isPlayingOnlineVideo.value = false;
           } else {
             // User canceled the picker
           }
@@ -43,6 +49,7 @@ class MenuItems {
         label: '打开在线流媒体',
         icon: Icons.ondemand_video,
         onSelected: () async {
+          mainController.isPlayingOnlineVideo.value = true;
           // singleInputDialog(
           //   null,
           //   "Single Input Dialog",

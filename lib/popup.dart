@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:ginkgo_tv/helper/toast_helper.dart';
 import 'package:ginkgo_tv/main.dart';
 import 'package:ginkgo_tv/model/channel.dart';
@@ -14,6 +15,7 @@ class PupupWidget extends StatefulWidget {
 }
 
 class _PupupWidgetState extends State<PupupWidget> {
+  final MainController mainController = Get.put(MainController());
   late List<Channel> chns = <Channel>[];
 
   Future<void> getData() async {
@@ -35,7 +37,7 @@ class _PupupWidgetState extends State<PupupWidget> {
       future: getData(),
       builder: (context, snapshot) {
         return Container(
-          width: 300,
+          width: 360,
           alignment: Alignment.topLeft,
           child: ListView.builder(
               itemCount: chns.length,
@@ -46,7 +48,7 @@ class _PupupWidgetState extends State<PupupWidget> {
                       filter: ImageFilter.blur(sigmaX: 0, sigmaY: 0),
                       child: Container(
                         color: Colors.white.withOpacity(0.2),
-                        width: 300,
+                        width: 360,
                         height: 50,
                         child: ElevatedButton(
                             onPressed: () {
@@ -54,6 +56,10 @@ class _PupupWidgetState extends State<PupupWidget> {
                               showMyToast(chns[index].title);
                               player.setRate(1.0);
                               player.jump(index);
+                              setState(() {
+                                mainController.isPlayingOnlineVideo.value =
+                                    true;
+                              });
                             },
                             style: ButtonStyle(
                                 backgroundColor:

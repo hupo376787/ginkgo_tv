@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_context_menu/flutter_context_menu.dart';
 import 'package:get/get.dart';
+import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ginkgo_tv/model/channel.dart';
 import 'package:ginkgo_tv/popup.dart';
 import 'package:ginkgo_tv/splash_screen.dart';
@@ -38,6 +39,15 @@ void main() async {
   );
 }
 
+//Define controller
+class MainController extends GetxController {
+//节目菜单
+  var isMenuVisible = false.obs;
+//是否是播放在线视频流
+  var isPlayingOnlineVideo = true.obs;
+}
+//End controller
+
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
@@ -49,9 +59,9 @@ final player = Player();
 late List<Channel> channels;
 var onLineSources = const Playlist(<Media>[]);
 PupupWidget popup = const PupupWidget();
-bool menuVisible = false;
 
 class _MainAppState extends State<MainApp> {
+  final MainController mainController = Get.put(MainController());
   late final controller = VideoController(player);
   String? channelContent;
 
@@ -76,10 +86,10 @@ class _MainAppState extends State<MainApp> {
               player.open(onLineSources);
               player.setPlaylistMode(PlaylistMode.loop);
 
-              if (player.platform is NativePlayer) {
-              } else {
-                await (player.platform as dynamic).setProperty('cache', 'no');
-              }
+              // if (player.platform is NativePlayer) {
+              // } else {
+              //   await (player.platform as dynamic).setProperty('cache', 'no');
+              // }
             }));
   }
 
@@ -110,6 +120,7 @@ class _MainAppState extends State<MainApp> {
         }
       },
       child: Scaffold(
+        backgroundColor: Colors.black,
         body: Stack(
           children: [
             Center(
@@ -120,9 +131,8 @@ class _MainAppState extends State<MainApp> {
                   },
                   child: InkWell(
                     onTap: () {
-                      debugPrint('onTap InkWell');
                       setState(() {
-                        menuVisible = !menuVisible;
+                        mainController.isMenuVisible = RxBool(false);
                       });
                     },
                     child: SizedBox(
@@ -130,19 +140,23 @@ class _MainAppState extends State<MainApp> {
                       height: MediaQuery.of(context).size.width * 9.0 / 16.0,
                       child: Video(
                         controller: controller,
+                        //isPlayingOnlineVideo更改不会刷新，需要解决
+                        controls: mainController.isPlayingOnlineVideo.value
+                            ? NoVideoControls
+                            : AdaptiveVideoControls,
                       ),
                     ),
                   )),
             ),
             Visibility(
-              visible: menuVisible,
+              visible: mainController.isMenuVisible.value,
               maintainState: true,
               child: popup,
             ),
             IconButton(
               onPressed: () async {
                 setState(() {
-                  menuVisible = !menuVisible;
+                  mainController.isMenuVisible.toggle();
                 });
               },
               icon: const Icon(Icons.menu),
