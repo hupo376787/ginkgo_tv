@@ -1,0 +1,3 @@
+*.js linguist-language=dart
+*.css linguist-language=dart
+*.html linguist-language=dart
