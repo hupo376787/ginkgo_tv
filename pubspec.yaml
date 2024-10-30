@@ -1,7 +1,7 @@
 name: ginkgo_tv
 description: "A new Flutter project."
 publish_to: 'none'
-version: 0.1.0
+version: 1.0.0+1
 
 environment:
   sdk: '>=3.2.3 <4.0.0'
@@ -10,9 +10,9 @@ dependencies:
   flutter:
     sdk: flutter
   http:
-  media_kit:                    # Primary package.
-  media_kit_video:              # For video rendering.
-  media_kit_libs_video:         # Native video dependencies.
+  media_kit: ^1.1.11 # Primary package.
+  media_kit_video: ^1.2.5 # For video rendering.
+  media_kit_libs_video: ^1.0.5 # Native video dependencies.
   window_manager:
   sentry_flutter:
   lottie:
@@ -24,11 +24,17 @@ dependencies:
   file_picker:
   fialogs:
   get:
+  flutter_plugin_android_lifecycle: ^2.0.23
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
