@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import './helper/splash_screen_helper.dart';
 import 'package:media_kit/media_kit.dart';
-import 'package:media_kit_video/media_kit_video.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

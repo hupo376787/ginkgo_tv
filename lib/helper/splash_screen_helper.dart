@@ -173,10 +173,11 @@ class _SplashScreenHelperState extends State<SplashScreenHelper> {
           ),
           backgroundColor: Colors.white,
           splashScreenBody: Center(
-            child: Lottie.asset(
-              "assets/lottie/Netflix.json",
-              repeat: false,
-            ),
+            // child: Lottie.asset(
+            //   "assets/lottie/Netflix.json",
+            //   repeat: false,
+            // ),
+            child: Image.asset('assets/gif/splash.gif'),
           ),
         );
       default:

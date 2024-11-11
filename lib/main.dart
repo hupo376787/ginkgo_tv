@@ -1,11 +1,13 @@
 import 'dart:io';
+import 'dart:convert';
 
+import 'package:ginkgo_tv/helper/toast_helper.dart';
+import 'package:http/http.dart' as http;
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_context_menu/flutter_context_menu.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:ginkgo_tv/model/channel.dart';
 import 'package:ginkgo_tv/popup.dart';
 import 'package:ginkgo_tv/splash_screen.dart';
@@ -56,41 +58,21 @@ class MainApp extends StatefulWidget {
 }
 
 final player = Player();
-late List<Channel> channels;
+int idX = 0;
+List<Channel> channels = <Channel>[];
 var onLineSources = const Playlist(<Media>[]);
 PupupWidget popup = const PupupWidget();
 
 class _MainAppState extends State<MainApp> {
   final MainController mainController = Get.put(MainController());
   late final controller = VideoController(player);
-  String? channelContent;
 
   @override
   void initState() {
     super.initState();
 
-    rootBundle
-        .loadString("assets/file/channels.json")
-        .then((value) => setState(() async {
-              debugPrint(value);
-              channelContent = value;
-
-              List<Media> medias = <Media>[];
-              onLineSources = Playlist(medias);
-              channels = channelFromJson(channelContent!);
-              for (int i = 0; i <= channels.length - 1; i++) {
-                if (channels[i].videoUrl.isNotEmpty) {
-                  medias.add(Media(channels[i].videoUrl[0]));
-                }
-              }
-              player.open(onLineSources);
-              player.setPlaylistMode(PlaylistMode.loop);
-
-              // if (player.platform is NativePlayer) {
-              // } else {
-              //   await (player.platform as dynamic).setProperty('cache', 'no');
-              // }
-            }));
+    downloadAndReadFile(
+        'https://gitee.com/hupo376787/LiveList/raw/main/IPTV.m3u');
   }
 
   @override
@@ -99,24 +81,78 @@ class _MainAppState extends State<MainApp> {
     super.dispose();
   }
 
+  Future<void> downloadAndReadFile(String url) async {
+    List<Media> medias = <Media>[];
+    onLineSources = Playlist(medias);
+
+    try {
+      // 下载文件
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        // 将文件内容解码为字符串
+        String content = utf8.decode(response.bodyBytes);
+        // 输出内容
+        debugPrint('文件内容: $content');
+
+        List<String> lines = content.split("\n");
+        for (int i = 1; i < lines.length; i = i + 2) {
+          if (lines[i].isEmpty) continue;
+          debugPrint(lines[i]);
+
+          var chl = Channel(
+              id: i,
+              tvName: lines[i].split(",")[0].split(" ")[1],
+              tvLogo: lines[i].split(",")[0].split(" ")[2],
+              group: lines[i].split(",")[0].split(" ")[3],
+              title: lines[i].split(",")[1],
+              videoUrl: List.from([lines[i + 1]]));
+
+          if (chl.videoUrl.isNotEmpty) {
+            channels.add(chl);
+            medias.add(Media(chl.videoUrl[0]));
+          }
+        }
+
+        player.open(onLineSources);
+        player.setPlaylistMode(PlaylistMode.loop);
+        // if (player.platform is NativePlayer) {
+        // } else {
+        //   await (player.platform as dynamic).setProperty('cache', 'no');
+        // }
+      } else {
+        debugPrint('下载失败，状态码: ${response.statusCode}');
+      }
+    } catch (e) {
+      debugPrint('下载文件时发生错误: $e');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
+    return KeyboardListener(
       focusNode: FocusNode(),
       autofocus: true,
-      onKey: (value) {
-        if (value is RawKeyDownEvent) {
+      onKeyEvent: (value) {
+        if (value is KeyDownEvent) {
           switch (value.logicalKey.keyLabel) {
             case "Arrow Up":
+              idX--;
+              if (idX < 0) idX = channels.length - 1;
               player.previous();
               break;
             case "Arrow Down":
+              idX++;
+              if (idX > channels.length - 1) idX = 0;
               player.next();
               break;
             case "Enter":
               break;
             default:
           }
+
+          debugPrint(channels[idX].title);
+          showMyToast(channels[idX].title);
         }
       },
       child: Scaffold(

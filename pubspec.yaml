@@ -42,7 +42,8 @@ flutter:
   assets:
     - assets/lottie/Netflix.json
     - assets/lottie/WatchTV.json
-    - assets/sound/Netflix.mp3
+    - assets/sound/Netflix.wav
     - assets/icon/icon.png
     - assets/icon/image.png
-    - assets/file/channels.json
+    - assets/gif/splash.gif
+    

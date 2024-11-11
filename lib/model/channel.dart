@@ -12,56 +12,36 @@ String channelToJson(List<Channel> data) =>
 
 class Channel {
   int id;
-  int videoIndex;
-  String channel;
-  String logo;
-  String pid;
-  String sid;
-  String programId;
-  bool needToken;
-  bool mustToken;
+  String tvName;
+  String tvLogo;
+  String group;
   String title;
   List<String> videoUrl;
 
   Channel({
     required this.id,
-    required this.videoIndex,
-    required this.channel,
-    required this.logo,
-    required this.pid,
-    required this.sid,
-    required this.programId,
-    required this.needToken,
-    required this.mustToken,
+    required this.tvName,
+    required this.tvLogo,
+    required this.group,
     required this.title,
     required this.videoUrl,
   });
 
   factory Channel.fromJson(Map<String, dynamic> json) => Channel(
         id: json["id"],
-        videoIndex: json["videoIndex"],
-        channel: json["channel"],
-        logo: json["logo"],
-        pid: json["pid"],
-        sid: json["sid"],
-        programId: json["programId"],
-        needToken: json["needToken"],
-        mustToken: json["mustToken"],
+        tvName: json["tvName"],
+        tvLogo: json["tvLogo"],
         title: json["title"],
+        group: json["group"],
         videoUrl: List<String>.from(json["videoUrl"].map((x) => x)),
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "videoIndex": videoIndex,
-        "channel": channel,
-        "logo": logo,
-        "pid": pid,
-        "sid": sid,
-        "programId": programId,
-        "needToken": needToken,
-        "mustToken": mustToken,
+        "tvName": tvName,
+        "tvLogo": tvLogo,
         "title": title,
+        "group": group,
         "videoUrl": List<dynamic>.from(videoUrl.map((x) => x)),
       };
 }

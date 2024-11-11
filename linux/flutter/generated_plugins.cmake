@@ -5,7 +5,7 @@
 list(APPEND FLUTTER_PLUGIN_LIST
   media_kit_libs_linux
   media_kit_video
-  screen_retriever
+  screen_retriever_linux
   sentry_flutter
   window_manager
 )
