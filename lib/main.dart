@@ -151,8 +151,8 @@ class _MainAppState extends State<MainApp> {
             default:
           }
 
-          debugPrint(channels[idX].title);
-          showMyToast(channels[idX].title);
+          //debugPrint(channels[idX].title);
+          //showMyToast(channels[idX].title);
         }
       },
       child: Scaffold(

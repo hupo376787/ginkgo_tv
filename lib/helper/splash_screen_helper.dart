@@ -171,7 +171,7 @@ class _SplashScreenHelperState extends State<SplashScreenHelper> {
             message: "再按一次退出",
             child: MainApp(),
           ),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.black,
           splashScreenBody: Center(
             // child: Lottie.asset(
             //   "assets/lottie/Netflix.json",
