@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:convert';
 
+import 'package:fialogs/fialogs.dart';
 import 'package:ginkgo_tv/helper/toast_helper.dart';
 import 'package:http/http.dart' as http;
 import 'package:bot_toast/bot_toast.dart';
@@ -128,6 +129,9 @@ class _MainAppState extends State<MainApp> {
     }
   }
 
+  late DragStartDetails startVerticalDragDetails;
+  late DragUpdateDetails updateVerticalDragDetails;
+
   @override
   Widget build(BuildContext context) {
     return KeyboardListener(
@@ -165,7 +169,23 @@ class _MainAppState extends State<MainApp> {
                   onItemSelected: (value) {
                     debugPrint(value);
                   },
-                  child: InkWell(
+                  child: GestureDetector(
+                    onVerticalDragStart: (dragDetails) {
+                      startVerticalDragDetails = dragDetails;
+                    },
+                    onVerticalDragUpdate: (dragDetails) {
+                      updateVerticalDragDetails = dragDetails;
+                    },
+                    onVerticalDragEnd: (endDetails) {
+                      double dy = updateVerticalDragDetails.globalPosition.dy -
+                          startVerticalDragDetails.globalPosition.dy;
+
+                      if (dy < 0) {
+                        player.next();
+                      } else {
+                        player.previous();
+                      }
+                    },
                     onTap: () {
                       setState(() {
                         mainController.isMenuVisible = RxBool(false);
