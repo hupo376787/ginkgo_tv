@@ -170,6 +170,7 @@ class _MainAppState extends State<MainApp> {
                     debugPrint(value);
                   },
                   child: GestureDetector(
+                    behavior: HitTestBehavior.translucent,
                     onVerticalDragStart: (dragDetails) {
                       startVerticalDragDetails = dragDetails;
                     },
